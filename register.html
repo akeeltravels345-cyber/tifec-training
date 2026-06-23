@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register | TIFEC Training Center</title>
+  <meta name="description" content="Register your interest for the September 2026 intake at TIFEC, secure your place with a deposit, and view bank transfer details." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="https://images.squarespace-cdn.com/content/v1/658cf09bc342121da8222727/c6f5dc71-7a25-4ff6-af58-5a216bb04ed7/Original_logo-removebg-preview+3.png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://images.squarespace-cdn.com/content/v1/658cf09bc342121da8222727/c6f5dc71-7a25-4ff6-af58-5a216bb04ed7/Original_logo-removebg-preview+3.png" alt="TIFEC" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="register.html" class="active">Register</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/4407555476193" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Us</a>
+        <a href="#apply" class="btn btn-primary">Apply Now</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="course-hero">
+    <div class="container" style="max-width:760px;text-align:center">
+      <span class="eyebrow">September 2026 Intake</span>
+      <h1>Reserve your <em>place</em></h1>
+      <p class="lead" style="margin-top:14px">Tell us a little about you and which course you have in mind. There's no payment needed to register your interest — and when you're ready, you can secure your seat with a deposit below.</p>
+    </div>
+  </header>
+
+  <!-- APPLY FORM -->
+  <section class="section" id="apply">
+    <div class="container" style="max-width:760px">
+      <form class="form-card reveal" data-lead-form data-success="apply-success">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Full name <span class="req">*</span></label>
+            <input class="form-control" type="text" name="name" required />
+          </div>
+          <div class="form-group">
+            <label>Email <span class="req">*</span></label>
+            <input class="form-control" type="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label>WhatsApp number <span class="req">*</span></label>
+            <input class="form-control" type="tel" name="whatsapp" required />
+          </div>
+          <div class="form-group">
+            <label>Course of interest <span class="req">*</span></label>
+            <select class="form-control" name="course" required>
+              <option value="" disabled selected>Select a course</option>
+              <option>Introduction to HR Management</option>
+              <option>Caring for the Elderly</option>
+              <option>AI for Business &amp; Career</option>
+              <option>Office Management</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Payment plan preference</label>
+            <select class="form-control" name="payment_plan">
+              <option value="" disabled selected>Select a preference</option>
+              <option>Pay in Full</option>
+              <option>Payment Plan (2 instalments)</option>
+              <option>Extended Plan (4 monthly instalments)</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>How did you hear about us?</label>
+            <select class="form-control" name="referral">
+              <option value="" disabled selected>Select an option</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Word of mouth</option>
+              <option>Google search</option>
+              <option>The Institute For Essential Care</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit My Application</button>
+            <p class="form-note">Submitting this form simply registers your interest — no payment is taken here.</p>
+          </div>
+        </div>
+      </form>
+
+      <div class="form-success" id="apply-success">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        <h3>Thank you — we've got your application.</h3>
+        <p>Our team will contact you within 2 business days via WhatsApp to confirm your place and the next steps. To secure your seat now, you can pay your deposit below.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOSIT / PAYMENT -->
+  <section class="section bg-soft">
+    <div class="container" style="max-width:900px">
+      <div class="section-head reveal">
+        <span class="eyebrow">Secure Your Seat</span>
+        <h2>Pay your <em>deposit</em></h2>
+        <p>Places are limited and held on a first-come basis. A deposit confirms your seat for the September 2026 intake.</p>
+      </div>
+
+      <div class="course-layout" style="grid-template-columns:1fr 1fr">
+
+        <!-- Stripe -->
+        <div class="pay-card reveal">
+          <h3>Pay by card</h3>
+          <p style="margin-bottom:20px">Quick and secure — pay your deposit online via Stripe. This option applies to all courses.</p>
+          <a href="https://buy.stripe.com/8x23cv9ZRfNS9JE0J19oc0I" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-block">Pay Deposit via Stripe</a>
+          <div class="callout" style="margin-top:20px">Paying your deposit secures your place. Our team will contact you within 2 business days via WhatsApp.</div>
+        </div>
+
+        <!-- Bank transfer -->
+        <div class="pay-card reveal">
+          <h3>Pay by bank transfer</h3>
+          <p style="margin-bottom:14px">Prefer a local transfer? Use the details below and send your confirmation to <a href="mailto:admin@caymanessentialcare.com">admin@caymanessentialcare.com</a>.</p>
+          <div class="bank-details">
+            <dl>
+              <dt>Bank</dt><dd>Cayman National Bank</dd>
+              <dt>Name</dt><dd>Akeel O'Connor</dd>
+              <dt>Account</dt><dd>012-50662</dd>
+            </dl>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="https://images.squarespace-cdn.com/content/v1/658cf09bc342121da8222727/c6f5dc71-7a25-4ff6-af58-5a216bb04ed7/Original_logo-removebg-preview+3.png" alt="TIFEC" />
+          </div>
+          <p>Professional training for the Cayman community — a division of The Institute For Essential Care.</p>
+          <div class="socials">
+            <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="about.html">About TIFEC</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in Touch</h4>
+          <div class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg> 59 Maclendon Dr, George Town, Grand Cayman</div>
+          <div class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg> <a href="mailto:admin@caymanessentialcare.com">admin@caymanessentialcare.com</a></div>
+          <div class="contact-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> <a href="https://wa.me/4407555476193" target="_blank" rel="noopener">WhatsApp us</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year">2026</span> TIFEC Training Center · The Institute For Essential Care, Cayman Islands
+      </div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/4407555476193" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.1-.6.2-.2.3-.7 1-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 3 4.7 4.2.6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.2-.5-.3zM12 2a10 10 0 0 0-8.5 15.3L2 22l4.8-1.3A10 10 0 1 0 12 2z"/></svg>
+  </a>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
