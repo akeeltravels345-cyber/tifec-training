@@ -44,7 +44,9 @@
   <!-- APPLY FORM -->
   <section class="section" id="apply">
     <div class="container" style="max-width:760px">
-      <form class="form-card reveal" data-lead-form data-success="apply-success">
+      <form class="form-card reveal" name="register-apply" method="POST" data-netlify="true" netlify-honeypot="bot-field" data-lead-form data-success="apply-success">
+        <input type="hidden" name="form-name" value="register-apply" />
+        <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
         <div class="form-grid">
           <div class="form-group">
             <label>Full name <span class="req">*</span></label>

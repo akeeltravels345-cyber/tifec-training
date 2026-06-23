@@ -37,9 +37,10 @@
 // ---- Lead capture forms ----
 // NOTE FOR DEVELOPER: connect a real endpoint below.
 // Replace FORM_ENDPOINT with your Formspree URL (https://formspree.io)
-// or any webhook that accepts a POST. While it is null, submissions are
-// logged to the console and the confirmation message is still shown.
-var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id'
+// or any webhook that accepts a POST. When null, submissions post to "/" which
+// Netlify Forms captures automatically (the forms carry data-netlify="true").
+// Submissions appear in your Netlify dashboard under Forms.
+var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id' to override
 
 (function () {
   var forms = document.querySelectorAll('form[data-lead-form]');
@@ -47,7 +48,6 @@ var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id'
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      var data = Object.fromEntries(new FormData(form).entries());
       var successId = form.getAttribute('data-success');
       var successEl = successId ? document.getElementById(successId) : null;
       var submitBtn = form.querySelector('[type="submit"]');
@@ -60,18 +60,18 @@ var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id'
         }
       }
 
-      if (FORM_ENDPOINT) {
-        if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
-        fetch(FORM_ENDPOINT, {
-          method: 'POST',
-          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        }).then(function () { showSuccess(); })
-          .catch(function () { showSuccess(); }); // still confirm to the visitor
-      } else {
-        console.log('[TIFEC lead — connect FORM_ENDPOINT in js/main.js]', data);
-        showSuccess();
-      }
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }
+
+      // Netlify Forms expects URL-encoded data (incl. the hidden form-name) POSTed to "/".
+      var body = new URLSearchParams(new FormData(form)).toString();
+      var endpoint = FORM_ENDPOINT || '/';
+
+      fetch(endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body
+      }).then(function () { showSuccess(); })
+        .catch(function () { showSuccess(); }); // still confirm to the visitor
     });
   });
 })();
