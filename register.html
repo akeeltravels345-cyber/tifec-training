@@ -56,42 +56,6 @@
             <label>Last name <span class="req">*</span></label>
             <input class="form-control" type="text" name="last_name" required />
           </div>
-          <div class="form-group">
-            <label>Date of birth <span class="req">*</span></label>
-            <input class="form-control" type="date" name="date_of_birth" required />
-          </div>
-          <div class="form-group">
-            <label>Nationality <span class="req">*</span></label>
-            <input class="form-control" type="text" name="nationality" required />
-            <p class="form-note">This is solely for statistics, all are welcome.</p>
-          </div>
-          <div class="form-group">
-            <label>Email <span class="req">*</span></label>
-            <input class="form-control" type="email" name="email" required />
-          </div>
-          <div class="form-group">
-            <label>WhatsApp contact number <span class="req">*</span></label>
-            <input class="form-control" type="tel" name="whatsapp" required />
-          </div>
-          <div class="form-group full">
-            <label>Course(s) of interest <span class="req">*</span></label>
-            <select class="form-control" name="course" required>
-              <option value="" disabled selected>Select a course</option>
-              <option>Introduction to HR Management</option>
-              <option>Caring for the Elderly</option>
-              <option>Office Admin (coming soon)</option>
-              <option>Introduction to AI (coming soon)</option>
-            </select>
-          </div>
-          <div class="form-group full">
-            <label>How would you be paying for your training program? <span class="req">*</span></label>
-            <select class="form-control" name="payment_method" required>
-              <option value="" disabled selected>Select an option</option>
-              <option>Full Payment Upfront</option>
-              <option>Payment Plan</option>
-              <option>Extended Payment Plan (4 months)</option>
-            </select>
-          </div>
           <div class="form-group full">
             <label>Are you a business sending staff for training? <span class="req">*</span></label>
             <select class="form-control" name="is_business" required>
@@ -104,6 +68,35 @@
             <label>Name of business</label>
             <input class="form-control" type="text" name="business_name" />
             <p class="form-note">Only if you're registering on behalf of a business.</p>
+          </div>
+          <div class="form-group">
+            <label>Date of birth <span class="req">*</span></label>
+            <input class="form-control" type="date" name="date_of_birth" required />
+          </div>
+          <div class="form-group">
+            <label>Email <span class="req">*</span></label>
+            <input class="form-control" type="email" name="email" required />
+          </div>
+          <div class="form-group full">
+            <label>WhatsApp contact number <span class="req">*</span></label>
+            <input class="form-control" type="tel" name="whatsapp" required />
+          </div>
+          <div class="form-group full">
+            <label>Course(s) of interest <span class="req">*</span></label>
+            <p class="form-note" style="margin-top:0;margin-bottom:10px">Select all that apply.</p>
+            <div class="checkbox-row"><input type="checkbox" id="c-hr" name="courses[]" value="Introduction to HR Management" /><label for="c-hr">Introduction to HR Management</label></div>
+            <div class="checkbox-row"><input type="checkbox" id="c-eld" name="courses[]" value="Caring for the Elderly" /><label for="c-eld">Caring for the Elderly</label></div>
+            <div class="checkbox-row"><input type="checkbox" id="c-off" name="courses[]" value="Office Admin (coming soon)" /><label for="c-off">Office Admin (coming soon)</label></div>
+            <div class="checkbox-row"><input type="checkbox" id="c-ai" name="courses[]" value="Introduction to AI (coming soon)" /><label for="c-ai">Introduction to AI (coming soon)</label></div>
+          </div>
+          <div class="form-group full">
+            <label>How would you be paying for your training program? <span class="req">*</span></label>
+            <select class="form-control" name="payment_method" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Full Payment Upfront</option>
+              <option>Payment Plan</option>
+              <option>Extended Payment Plan (4 months)</option>
+            </select>
           </div>
           <div class="form-group full">
             <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>

@@ -45,6 +45,14 @@ var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id' to override
 (function () {
   var forms = document.querySelectorAll('form[data-lead-form]');
   forms.forEach(function (form) {
+    // Course checkboxes: clear any "select a course" error as soon as one is ticked.
+    var courseBoxes = form.querySelectorAll('input[name="courses[]"]');
+    Array.prototype.forEach.call(courseBoxes, function (b) {
+      b.addEventListener('change', function () {
+        if (courseBoxes.length) courseBoxes[0].setCustomValidity('');
+      });
+    });
+
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
@@ -58,6 +66,13 @@ var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id' to override
           successEl.classList.add('show');
           successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
+      }
+
+      // Require at least one course when the form uses course checkboxes.
+      if (courseBoxes.length) {
+        var anyChecked = Array.prototype.some.call(courseBoxes, function (b) { return b.checked; });
+        courseBoxes[0].setCustomValidity(anyChecked ? '' : 'Please select at least one course.');
+        if (!anyChecked) { courseBoxes[0].reportValidity(); return; }
       }
 
       if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Sending…'; }

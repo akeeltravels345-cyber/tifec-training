@@ -345,6 +345,7 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 .checkbox-row { display: flex; align-items: flex-start; gap: 11px; }
 .checkbox-row input { width: 19px; height: 19px; margin-top: 3px; accent-color: var(--teal); flex-shrink: 0; cursor: pointer; }
 .checkbox-row label { font-weight: 400; color: var(--muted); font-size: 0.95rem; cursor: pointer; }
+.checkbox-row + .checkbox-row { margin-top: 10px; }
 .form-note { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
 
 /* form success message */
@@ -375,6 +376,7 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 .course-layout { display: grid; grid-template-columns: 1fr 340px; gap: 50px; align-items: start; }
 .course-main h2 { margin: 0 0 20px; }
 .course-main h2:not(:first-child) { margin-top: 48px; }
+.course-main h3 { font-family: var(--serif); font-size: 1.25rem; margin: 26px 0 12px; color: var(--text); }
 .course-main ul { margin: 0 0 10px; padding-left: 0; list-style: none; }
 .course-main ul li {
   position: relative;
