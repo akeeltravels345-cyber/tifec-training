@@ -49,52 +49,51 @@
         <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
         <div class="form-grid">
           <div class="form-group">
-            <label>Full name <span class="req">*</span></label>
-            <input class="form-control" type="text" name="name" required />
+            <label>First name <span class="req">*</span></label>
+            <input class="form-control" type="text" name="first_name" required />
+          </div>
+          <div class="form-group">
+            <label>Last name <span class="req">*</span></label>
+            <input class="form-control" type="text" name="last_name" required />
+          </div>
+          <div class="form-group">
+            <label>Date of birth <span class="req">*</span></label>
+            <input class="form-control" type="date" name="date_of_birth" required />
+          </div>
+          <div class="form-group">
+            <label>Nationality <span class="req">*</span></label>
+            <input class="form-control" type="text" name="nationality" required />
+            <p class="form-note">This is solely for statistics — all are welcome.</p>
           </div>
           <div class="form-group">
             <label>Email <span class="req">*</span></label>
             <input class="form-control" type="email" name="email" required />
           </div>
           <div class="form-group">
-            <label>WhatsApp number <span class="req">*</span></label>
+            <label>WhatsApp contact number <span class="req">*</span></label>
             <input class="form-control" type="tel" name="whatsapp" required />
           </div>
-          <div class="form-group">
-            <label>Course of interest <span class="req">*</span></label>
+          <div class="form-group full">
+            <label>Course(s) of interest <span class="req">*</span></label>
             <select class="form-control" name="course" required>
               <option value="" disabled selected>Select a course</option>
               <option>Introduction to HR Management</option>
               <option>Caring for the Elderly</option>
-              <option>AI for Business &amp; Career</option>
-              <option>Office Management</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>Payment plan preference</label>
-            <select class="form-control" name="payment_plan">
-              <option value="" disabled selected>Select a preference</option>
-              <option>Pay in Full</option>
-              <option>Payment Plan (2 instalments)</option>
-              <option>Extended Plan (4 monthly instalments)</option>
-              <option>Not sure yet</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label>How did you hear about us?</label>
-            <select class="form-control" name="referral">
-              <option value="" disabled selected>Select an option</option>
-              <option>Instagram</option>
-              <option>Facebook</option>
-              <option>Word of mouth</option>
-              <option>Google search</option>
-              <option>The Institute For Essential Care</option>
-              <option>Other</option>
+              <option>Office Admin (coming soon)</option>
+              <option>Introduction to AI (coming soon)</option>
             </select>
           </div>
           <div class="form-group full">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit My Application</button>
+            <label>How will you be paying for your training program? <span class="req">*</span></label>
+            <select class="form-control" name="payment_method" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Full Payment Upfront</option>
+              <option>Payment Plan</option>
+              <option>Extended Payment Plan (4 months)</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
             <p class="form-note">Submitting this form simply registers your interest — no payment is taken here.</p>
           </div>
         </div>
