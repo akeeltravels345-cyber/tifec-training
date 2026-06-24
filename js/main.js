@@ -76,6 +76,24 @@ var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id' to override
   });
 })();
 
+// ---- Reveal "Name of business" only when registering on behalf of a business ----
+(function () {
+  document.querySelectorAll('select[name="is_business"]').forEach(function (sel) {
+    var form = sel.closest('form');
+    var group = form && form.querySelector('[data-business-name]');
+    if (!group) return;
+    var input = group.querySelector('input');
+    function sync() {
+      var isBusiness = sel.value.indexOf('Yes') === 0;
+      group.style.display = isBusiness ? '' : 'none';
+      if (input) input.required = isBusiness;
+      if (!isBusiness && input) input.value = '';
+    }
+    sel.addEventListener('change', sync);
+    sync();
+  });
+})();
+
 // ---- Footer year ----
 (function () {
   var y = document.getElementById('year');
