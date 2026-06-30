@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Register | TIFEC Training Center</title>
-  <meta name="description" content="Register your interest for the September 2026 intake at TIFEC, secure your place with a deposit, and view bank transfer details." />
+  <meta name="description" content="Register for the September 2026 intake at TIFEC. Secure your spot with your first instalment or a KYD $100 deposit, with card and bank transfer options." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/styles.css" />
@@ -36,8 +36,8 @@
   <header class="course-hero">
     <div class="container" style="max-width:760px;text-align:center">
       <span class="eyebrow">September 2026 Intake</span>
-      <h1>Reserve your <em>place</em></h1>
-      <p class="lead" style="margin-top:14px">Tell us a little about you and which course you have in mind. There's no payment needed to register your interest, and when you're ready, you can secure your seat with a deposit below.</p>
+      <h1>Secure your <em>spot</em></h1>
+      <p class="lead" style="margin-top:14px">Fill in your details below, then secure your spot for the September intake. There are two ways to do it: pay your first instalment, or hold your place with a KYD $100 deposit. Places are limited.</p>
     </div>
   </header>
 
@@ -90,7 +90,7 @@
             <div class="checkbox-row"><input type="checkbox" id="c-ai" name="courses[]" value="Introduction to AI (coming soon)" /><label for="c-ai">Introduction to AI (coming soon)</label></div>
           </div>
           <div class="form-group full">
-            <label>How would you be paying for your training program? <span class="req">*</span></label>
+            <label>Which payment plan suits you? <span class="req">*</span></label>
             <select class="form-control" name="payment_method" required>
               <option value="" disabled selected>Select an option</option>
               <option>Full Payment Upfront</option>
@@ -99,8 +99,18 @@
             </select>
           </div>
           <div class="form-group full">
+            <label>How would you like to proceed? <span class="req">*</span></label>
+            <select class="form-control" name="payment_readiness" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Send me the course outline and more details for now</option>
+              <option>I'd like to pay the KYD $100 deposit to save my spot</option>
+              <option>I'm ready to make my first tuition payment</option>
+            </select>
+            <p class="form-note">Choose "deposit" to hold your spot and pay the rest before the deadline, or pay your first instalment now. Not ready yet? We'll send the course outline and details.</p>
+          </div>
+          <div class="form-group full">
             <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
-            <p class="form-note">Submitting this form simply registers your interest, no payment is taken here.</p>
+            <p class="form-note">No payment is taken on this form. Based on your answers, we'll email you the next step: the course outline, deposit instructions, or how to pay your first instalment.</p>
           </div>
         </div>
       </form>
@@ -113,39 +123,40 @@
     </div>
   </section>
 
-  <!-- DEPOSIT / PAYMENT -->
-  <section class="section bg-soft">
+  <!-- SECURE YOUR SPOT / PAYMENT -->
+  <section class="section bg-soft" id="secure">
     <div class="container" style="max-width:900px">
       <div class="section-head reveal">
-        <span class="eyebrow">Secure Your Seat</span>
-        <h2>Pay your <em>deposit</em></h2>
-        <p>Places are limited and held on a first-come basis. A deposit confirms your seat for the September 2026 intake.</p>
+        <span class="eyebrow">Payment</span>
+        <h2>What happens <em>next</em></h2>
+        <p>No payment is taken on the form. Based on how you chose to proceed, we'll email you within 2 business days with the right next step: the course outline if you're still deciding, instructions to pay your KYD $100 deposit to save your spot, or how to pay your first tuition instalment.</p>
       </div>
 
-      <div class="course-layout" style="grid-template-columns:1fr 1fr">
+      <!-- Payment deadlines -->
+      <h2 style="margin-top:44px">Payment <em>deadlines</em></h2>
+      <p>These are the latest dates to pay for the September 2026 intake. You're welcome to pay sooner, and earlier payment is always encouraged. Your KYD $100 deposit counts toward your first payment.</p>
+      <table class="assess-table">
+        <tr><td>Deposit · KYD $100, holds your spot</td><td>At registration</td></tr>
+        <tr><td>Pay in Full · full fee</td><td>1 Sep 2026</td></tr>
+        <tr><td>Payment Plan · 2 instalments</td><td>1 Sep &amp; 1 Oct 2026</td></tr>
+        <tr><td>Extended Plan · 4 monthly instalments</td><td>1 Sep · 1 Oct · 1 Nov · 1 Dec 2026</td></tr>
+      </table>
+      <div class="callout" style="margin-top:20px">The Extended Plan finishes after your course ends. To receive your certificate with your class, clear your full balance by the last day of the course.</div>
+      <p class="form-note">Classes begin Monday 7 September 2026 (HR Management) and Tuesday 8 September 2026 (Caring for the Elderly).</p>
 
-        <!-- Stripe -->
-        <div class="pay-card reveal">
-          <h3>Pay by card</h3>
-          <p style="margin-bottom:20px">Quick and secure. Pay your deposit online via Stripe. This option applies to all courses.</p>
-          <a href="https://buy.stripe.com/8x23cv9ZRfNS9JE0J19oc0I" target="_blank" rel="noopener" class="btn btn-primary btn-lg btn-block">Pay Deposit via Stripe</a>
-          <div class="callout" style="margin-top:20px">Paying your deposit secures your place. Our team will contact you within 2 business days via WhatsApp.</div>
+      <!-- Bank transfer -->
+      <div class="pay-card reveal" id="bank" style="margin-top:28px">
+        <h3>Pay by bank transfer</h3>
+        <p style="margin-bottom:14px">Prefer a local transfer? Use the details below for your deposit or instalment, and send your confirmation to <a href="mailto:admin@caymanessentialcare.com">admin@caymanessentialcare.com</a>.</p>
+        <div class="bank-details">
+          <dl>
+            <dt>Bank</dt><dd>Cayman National Bank</dd>
+            <dt>Name</dt><dd>Akeel O'Connor</dd>
+            <dt>Account</dt><dd>012-50662</dd>
+          </dl>
         </div>
-
-        <!-- Bank transfer -->
-        <div class="pay-card reveal">
-          <h3>Pay by bank transfer</h3>
-          <p style="margin-bottom:14px">Prefer a local transfer? Use the details below and send your confirmation to <a href="mailto:admin@caymanessentialcare.com">admin@caymanessentialcare.com</a>.</p>
-          <div class="bank-details">
-            <dl>
-              <dt>Bank</dt><dd>Cayman National Bank</dd>
-              <dt>Name</dt><dd>Akeel O'Connor</dd>
-              <dt>Account</dt><dd>012-50662</dd>
-            </dl>
-          </div>
-        </div>
-
       </div>
+
     </div>
   </section>
 
