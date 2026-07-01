@@ -540,6 +540,28 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal.in { opacity: 1; transform: translateY(0); }
 
+/* ---------- Location + classroom gallery (About) ---------- */
+.location-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 30px; align-items: stretch; }
+.location-info { display: flex; flex-direction: column; gap: 14px; justify-content: center; }
+.location-line { display: flex; align-items: flex-start; gap: 10px; color: var(--text); font-size: 1.05rem; }
+.location-line svg { width: 20px; height: 20px; color: var(--teal); flex-shrink: 0; margin-top: 3px; }
+.location-info .btn { align-self: flex-start; margin-top: 6px; }
+.location-map { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); min-height: 320px; border: 1px solid var(--border); }
+.location-map iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }
+
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.gallery-item { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4 / 3; box-shadow: var(--shadow); }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform var(--transition); }
+.gallery-item:hover img { transform: scale(1.04); }
+.gallery-item.placeholder {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--teal-light); border: 1px dashed var(--teal-mid); box-shadow: none;
+}
+.gallery-item.placeholder span {
+  font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; color: var(--teal-dark);
+  text-transform: uppercase;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 940px) {
   .course-layout { grid-template-columns: 1fr; }
@@ -576,4 +598,6 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
   .form-card { padding: 28px; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .hero { padding: 70px 0 80px; }
+  .location-grid { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr 1fr; }
 }

@@ -2,3 +2,6 @@
 .DS_Store
 .claude/
 *.zip
+
+# raw HEVC video (unused on site until converted to mp4)
+*.mov
