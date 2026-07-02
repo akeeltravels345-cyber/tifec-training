@@ -215,15 +215,6 @@
             <div class="checkbox-row"><input type="checkbox" id="c-ai" name="courses[]" value="Introduction to AI (coming soon)" /><label for="c-ai">Introduction to AI (coming soon)</label></div>
           </div>
           <div class="form-group full">
-            <label>Which payment plan suits you? <span class="req">*</span></label>
-            <select class="form-control" name="payment_method" required>
-              <option value="" disabled selected>Select an option</option>
-              <option>Full Payment Upfront</option>
-              <option>Payment Plan</option>
-              <option>Extended Payment Plan (4 months)</option>
-            </select>
-          </div>
-          <div class="form-group full">
             <label>How would you like to proceed? <span class="req">*</span></label>
             <select class="form-control" name="payment_readiness" required>
               <option value="" disabled selected>Select an option</option>
@@ -232,6 +223,24 @@
               <option>I'm ready to make my first tuition payment</option>
             </select>
             <p class="form-note">Choose "deposit" to hold your spot and pay the rest before the deadline, or pay your first instalment now. Not ready yet? We'll send the course outline and details.</p>
+          </div>
+          <div class="form-group full" data-plan-group style="display:none">
+            <label>Which payment plan suits you? <span class="req">*</span></label>
+            <select class="form-control" name="payment_method">
+              <option value="" disabled selected>Select an option</option>
+              <option>Full Payment Upfront</option>
+              <option>Payment Plan</option>
+              <option>Extended Payment Plan (4 months)</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label>How did you hear about us?</label>
+            <select class="form-control" name="how_heard">
+              <option value="" disabled selected>Select an option</option>
+              <option>Facebook</option>
+              <option>Instagram</option>
+              <option>Friend or family</option>
+            </select>
           </div>
           <div class="form-group full">
             <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
