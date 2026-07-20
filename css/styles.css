@@ -562,11 +562,112 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
   text-transform: uppercase;
 }
 
+/* ============================================================
+   Course landing (deposit-first conversion layout) — HR & Elderly
+   TIFEC aesthetic: teal / ink / gold, Cormorant + DM Sans
+   ============================================================ */
+.chero { background: linear-gradient(180deg, var(--teal-light) 0%, var(--white) 80%); padding: 46px 0 70px; }
+.chero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 50px; align-items: start; }
+.chero .breadcrumb { font-size: 0.9rem; color: var(--muted); margin-bottom: 16px; }
+.chero .breadcrumb a { color: var(--teal); }
+.chero h1 { margin: 4px 0 18px; font-size: clamp(2.3rem, 1.4rem + 3vw, 3.4rem); line-height: 1.05; }
+.chero .lead { max-width: 500px; margin-bottom: 0; }
+
+.scarcity-pill { display: inline-flex; align-items: center; gap: 9px; background: rgba(201,168,76,0.16);
+  color: #806015; font-weight: 600; font-size: 0.82rem; letter-spacing: 0.2px; padding: 7px 16px; border-radius: 50px; margin-bottom: 16px; }
+.scarcity-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 3px rgba(201,168,76,0.3); }
+
+.instructor-line { display: flex; align-items: center; gap: 12px; margin: 18px 0; }
+.avatar { width: 42px; height: 42px; border-radius: 50%; background: var(--teal); color: #fff;
+  font-family: var(--serif); font-weight: 600; font-size: 1.05rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.instructor-line .who { font-size: 0.97rem; color: var(--muted); }
+.instructor-line .who strong { color: var(--text); }
+
+.trust-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.tchip { background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow); border-radius: 50px;
+  padding: 8px 15px; font-size: 0.82rem; font-weight: 600; color: var(--text); }
+
+/* reserve card (the money element) */
+.reserve-card { position: relative; background: #fff; border: 1px solid var(--border); border-radius: var(--radius);
+  box-shadow: var(--shadow-hover); padding: 30px; overflow: hidden; }
+.reserve-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 6px;
+  background: linear-gradient(90deg, var(--teal), var(--gold)); }
+.rc-pill { display: inline-block; background: rgba(201,168,76,0.16); color: #806015; font-weight: 700;
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.6px; padding: 5px 12px; border-radius: 50px; margin-bottom: 16px; }
+.rc-label { color: var(--muted); font-weight: 600; font-size: 0.92rem; }
+.reserve-price { display: flex; align-items: baseline; gap: 10px; margin: 2px 0 10px; }
+.reserve-price .amt { font-family: var(--serif); font-weight: 600; font-size: 3.1rem; color: var(--ink); line-height: 1; letter-spacing: -0.5px; }
+.reserve-price .unit { font-size: 0.95rem; color: var(--muted); font-weight: 600; }
+.rc-copy { font-size: 0.95rem; color: var(--muted); line-height: 1.55; margin: 0 0 20px; }
+.reserve-card .btn + .btn { margin-top: 10px; }
+.reassure { margin-top: 16px; }
+.reassure .row { display: flex; align-items: flex-start; gap: 9px; font-size: 0.9rem; color: var(--muted); margin-top: 8px; }
+.reassure .ok { color: #2c7e54; font-weight: 800; flex-shrink: 0; }
+.reserve-facts { border-top: 1px solid var(--border); margin-top: 20px; padding-top: 16px; font-size: 0.88rem; color: var(--muted); }
+
+/* facts strip */
+.facts-strip { background: linear-gradient(150deg, var(--ink), var(--ink-soft)); color: #fff; padding: 34px 0; }
+.facts-inner { display: flex; justify-content: center; flex-wrap: wrap; gap: 22px 48px; text-align: center; }
+.fact-stat .v { font-family: var(--serif); font-weight: 600; font-size: 2.1rem; color: var(--gold); line-height: 1; }
+.fact-stat .l { color: rgba(255,255,255,0.72); font-size: 0.85rem; margin-top: 6px; }
+
+/* what you'll learn */
+.learn-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 44px; }
+.learn-item { display: flex; align-items: flex-start; gap: 13px; padding: 16px 0; border-bottom: 1px solid var(--border); }
+.learn-item .ck { width: 28px; height: 28px; border-radius: 50%; background: var(--teal-light); color: #2c7e54;
+  display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.85rem; flex-shrink: 0; }
+.learn-item .t { font-size: 1rem; font-weight: 600; color: var(--text); line-height: 1.45; }
+
+/* deposit-first pricing */
+.step1-banner { background: linear-gradient(150deg, var(--ink), var(--ink-soft)); border-radius: var(--radius);
+  box-shadow: var(--shadow-hover); padding: 30px 34px; display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.s1-badge { display: inline-block; background: var(--gold); color: var(--ink); font-weight: 700; font-size: 0.7rem;
+  text-transform: uppercase; letter-spacing: 0.6px; padding: 5px 12px; border-radius: 50px; margin-bottom: 12px; }
+.s1-title { font-family: var(--serif); font-weight: 600; font-size: 1.85rem; color: #fff; line-height: 1.15; }
+.s1-sub { color: rgba(255,255,255,0.82); font-size: 0.95rem; margin-top: 8px; max-width: 460px; line-height: 1.55; }
+.step2-label { text-align: center; color: var(--muted); font-weight: 600; font-size: 0.78rem;
+  text-transform: uppercase; letter-spacing: 1.5px; margin: 38px 0 22px; }
+.plan-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.plan-card { position: relative; background: #fff; border: 2px solid var(--border); border-radius: var(--radius);
+  padding: 30px 22px 26px; text-align: center; transition: var(--transition); }
+.plan-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+.plan-card.flex { border-color: var(--teal); }
+.pc-badge { position: absolute; top: -11px; left: 50%; transform: translateX(-50%); font-weight: 700; font-size: 0.66rem;
+  text-transform: uppercase; letter-spacing: 0.5px; padding: 4px 13px; border-radius: 50px; white-space: nowrap; }
+.pc-badge.teal { background: var(--teal); color: #fff; }
+.pc-badge.gold { background: var(--gold); color: var(--ink); }
+.pc-name { font-family: var(--serif); font-weight: 600; font-size: 1.2rem; color: var(--text); }
+.pc-price { font-family: var(--serif); font-weight: 600; font-size: 2rem; color: var(--teal); margin: 6px 0 2px; }
+.pc-sub { color: var(--teal-dark); font-weight: 600; font-size: 0.9rem; }
+.pc-note { color: var(--muted); font-size: 0.82rem; margin-top: 8px; }
+.price-foot { text-align: center; font-size: 0.85rem; color: var(--muted); margin-top: 22px; }
+
+/* facilitator */
+.facil-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 48px; align-items: center; }
+.facil-photo { aspect-ratio: 4 / 4.4; border-radius: var(--radius); box-shadow: var(--shadow-hover); overflow: hidden;
+  background: linear-gradient(150deg, var(--teal-light), var(--teal-mid)); display: flex; align-items: center; justify-content: center; }
+.facil-photo img { width: 100%; height: 100%; object-fit: cover; }
+.facil-photo .ph { font-family: var(--serif); font-weight: 600; font-size: 3rem; color: var(--teal-dark); opacity: 0.7; }
+.facil-cred { color: var(--teal-dark); font-weight: 600; font-size: 0.97rem; margin-bottom: 14px; }
+.facil-chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.facil-chips .fc { background: var(--teal-light); color: var(--teal-dark); border-radius: 50px; padding: 7px 15px; font-size: 0.82rem; font-weight: 600; }
+
+/* course details grid */
+.details-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.detail-card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px 20px; }
+.detail-card .dl { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); font-weight: 600; margin-bottom: 5px; }
+.detail-card .dv { font-weight: 500; color: var(--text); font-size: 0.98rem; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 940px) {
   .course-layout { grid-template-columns: 1fr; }
   .course-sidebar { position: static; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
+  .chero-grid { grid-template-columns: 1fr; gap: 34px; }
+  .facil-grid { grid-template-columns: 1fr; gap: 26px; }
+  .facil-photo { max-width: 320px; }
+  .plan-cards { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+  .step1-banner { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 768px) {
   body { font-size: 16px; }
@@ -600,4 +701,8 @@ select.form-control { appearance: none; background-image: url("data:image/svg+xm
   .hero { padding: 70px 0 80px; }
   .location-grid { grid-template-columns: 1fr; }
   .gallery { grid-template-columns: 1fr 1fr; }
+  .learn-grid { grid-template-columns: 1fr; }
+  .details-grid { grid-template-columns: 1fr; }
+  .facts-inner { gap: 18px 30px; }
+  .fact-stat .v { font-size: 1.8rem; }
 }
