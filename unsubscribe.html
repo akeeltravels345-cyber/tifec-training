@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Unsubscribe | TIFEC Training Center</title>
+  <meta name="description" content="Stop receiving course emails from TIFEC Training Center." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="https://images.squarespace-cdn.com/content/v1/658cf09bc342121da8222727/c6f5dc71-7a25-4ff6-af58-5a216bb04ed7/Original_logo-removebg-preview+3.png" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="https://images.squarespace-cdn.com/content/v1/658cf09bc342121da8222727/c6f5dc71-7a25-4ff6-af58-5a216bb04ed7/Original_logo-removebg-preview+3.png" alt="TIFEC" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="register.html">Register</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="https://wa.me/4407555476193" target="_blank" rel="noopener" class="btn btn-outline">WhatsApp Us</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <header class="course-hero">
+    <div class="container" style="max-width:640px;text-align:center">
+      <span class="eyebrow">Email preferences</span>
+      <h1 id="head">Unsubscribe</h1>
+      <p class="lead" style="margin-top:14px" id="sub">Confirm below and we will stop sending you course emails.</p>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container" style="max-width:640px">
+
+      <!-- Netlify needs to see this form at build time. It posts only the opaque
+           token from the email link, never the address itself. -->
+      <form name="unsubscribe" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+        <input type="hidden" name="form-name" value="unsubscribe" />
+        <input type="text" name="u" />
+        <input type="email" name="email" />
+        <input type="text" name="bot-field" />
+      </form>
+
+      <div class="form-card" id="panel" style="text-align:center">
+        <p style="margin:0 0 20px">You are about to stop receiving emails about TIFEC courses, including course dates, fees and intake reminders.</p>
+        <button class="btn btn-primary" id="go" type="button">Yes, unsubscribe me</button>
+        <p style="margin:18px 0 0;font-size:14px;opacity:.75">Changed your mind? <a href="courses.html">Browse our courses</a> instead.</p>
+      </div>
+
+      <div class="form-card" id="done" style="display:none;text-align:center">
+        <h3 style="margin:0 0 10px">You have been unsubscribed</h3>
+        <p style="margin:0">You will not receive any further course emails from us. If this was a mistake, just
+          <a href="https://wa.me/4407555476193" target="_blank" rel="noopener">message us on WhatsApp</a> and we will add you back.</p>
+      </div>
+
+      <div class="form-card" id="oops" style="display:none;text-align:center">
+        <h3 style="margin:0 0 10px">We could not complete that</h3>
+        <p style="margin:0">Please <a href="https://wa.me/4407555476193" target="_blank" rel="noopener">message us on WhatsApp</a>
+          or email <a href="mailto:admin@caymanessentialcare.com">admin@caymanessentialcare.com</a> and we will remove you straight away.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        © <span id="year">2026</span> TIFEC Training Center · The Institute For Essential Care, Cayman Islands
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var token = new URLSearchParams(location.search).get("u") || "";
+      var go = document.getElementById("go");
+      var show = function (id) {
+        ["panel", "done", "oops"].forEach(function (k) {
+          document.getElementById(k).style.display = (k === id) ? "" : "none";
+        });
+      };
+      go.addEventListener("click", function () {
+        go.disabled = true;
+        go.textContent = "Removing you…";
+        var body = new URLSearchParams();
+        body.append("form-name", "unsubscribe");
+        body.append("u", token);
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: body.toString()
+        }).then(function (r) {
+          show(r.ok ? "done" : "oops");
+        }).catch(function () { show("oops"); });
+      });
+      var y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
