@@ -109,25 +109,8 @@ var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id' to override
   });
 })();
 
-// ---- Show the payment-plan question only when they choose to pay (deposit or first tuition) ----
-(function () {
-  document.querySelectorAll('select[name="payment_readiness"]').forEach(function (sel) {
-    var form = sel.closest('form');
-    var group = form && form.querySelector('[data-plan-group]');
-    if (!group) return;
-    var input = group.querySelector('select');
-    function sync() {
-      var wantsPay = /deposit|tuition/i.test(sel.value);   // deposit or first tuition
-      group.style.display = wantsPay ? '' : 'none';
-      if (input) {
-        input.required = wantsPay;
-        if (!wantsPay) input.value = '';
-      }
-    }
-    sel.addEventListener('change', sync);
-    sync();
-  });
-})();
+// The payment-option question is now asked of everyone (their intended plan if
+// they join), so it stays visible and required — no show/hide toggle needed.
 
 // ---- Footer year ----
 (function () {
