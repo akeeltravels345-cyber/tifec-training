@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <title>Complete your enrolment | TIFEC Training Center</title>
-  <meta name="description" content="Complete your enrolment for the TIFEC Training Center." />
+  <title>Complete your enrollment | TIFEC Training Center</title>
+  <meta name="description" content="Complete your enrollment for the TIFEC Training Center." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="css/styles.css" />
@@ -35,8 +35,8 @@
   <!-- PAGE HERO -->
   <header class="course-hero">
     <div class="container" style="max-width:760px;text-align:center">
-      <span class="eyebrow">Enrolment</span>
-      <h1>Complete your <em>enrolment</em></h1>
+      <span class="eyebrow">Enrollment</span>
+      <h1>Complete your <em>enrollment</em></h1>
       <p class="lead" style="margin-top:14px">Thank you for securing your place. Please confirm your details below, upload a form of ID, and give us an emergency contact. This takes about two minutes, then we'll issue your acceptance letter.</p>
     </div>
   </header>
@@ -63,7 +63,7 @@
           <div class="form-group full">
             <label>Photo ID <span class="req">*</span></label>
             <input class="form-control" type="file" name="id_document" accept="image/*,application/pdf" required />
-            <p class="form-note">A clear photo or scan of a government ID (passport, driver's licence, or voter card). Used only for your enrolment record.</p>
+            <p class="form-note">A clear photo or scan of a government ID (passport, driver's licence, or voter card). Used only for your enrollment record.</p>
           </div>
           <div class="form-group">
             <label>Emergency contact name <span class="req">*</span></label>
@@ -78,19 +78,30 @@
             <input class="form-control" type="tel" name="emergency_phone" required />
           </div>
           <div class="form-group full">
+            <label>Confirm your payment option <span class="req">*</span></label>
+            <select class="form-control" name="payment_method" required>
+              <option value="" disabled selected>Select an option</option>
+              <option>Pay in Full</option>
+              <option>Payment Plan (2 instalments)</option>
+              <option>Extended Plan (4 monthly instalments)</option>
+              <option>I'm not sure yet</option>
+            </select>
+            <p class="form-note">This confirms how you'll pay your programme fee. You can still change it later by letting us know.</p>
+          </div>
+          <div class="form-group full">
             <label>What made you want to join this course?</label>
             <textarea class="form-control" name="motivation" rows="3" placeholder="Optional, but we'd love to know."></textarea>
           </div>
           <div class="form-group full">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Complete enrolment</button>
-            <p class="form-note">Your details are used only for your enrolment and kept confidential. Once we have them, we'll email your official acceptance letter.</p>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Complete enrollment</button>
+            <p class="form-note">Your details are used only for your enrollment and kept confidential. Once we have them, we'll email your official acceptance letter.</p>
           </div>
         </div>
       </form>
 
       <div class="form-success" id="enrol-success">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
-        <h3>Thank you, your enrolment is complete.</h3>
+        <h3>Thank you, your enrollment is complete.</h3>
         <p>We've received your details. Your official acceptance letter will be on its way by email shortly. We look forward to seeing you in class.</p>
       </div>
     </div>
