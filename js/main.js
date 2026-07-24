@@ -91,6 +91,30 @@ var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id' to override
   });
 })();
 
+// ---- Enrolment form: multipart POST (keeps the file upload) + success reveal ----
+// Kept separate from the lead-capture handler above, which URL-encodes the body
+// and would drop the uploaded ID file. Netlify accepts a multipart FormData POST.
+(function () {
+  var form = document.querySelector('form[name="enrollment"]');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var successEl = document.getElementById(form.getAttribute('data-success'));
+    var btn = form.querySelector('[type="submit"]');
+    if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
+    fetch('/', { method: 'POST', body: new FormData(form) })  // browser sets the multipart boundary
+      .then(function () { done(); })
+      .catch(function () { done(); });
+    function done() {
+      if (successEl) {
+        form.style.display = 'none';
+        successEl.classList.add('show');
+        successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+  });
+})();
+
 // ---- Reveal "Name of business" only when registering on behalf of a business ----
 (function () {
   document.querySelectorAll('select[name="is_business"]').forEach(function (sel) {
