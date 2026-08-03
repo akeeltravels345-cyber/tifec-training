@@ -91,7 +91,7 @@ var FORM_ENDPOINT = null; // e.g. 'https://formspree.io/f/your-id' to override
   });
 })();
 
-// ---- Enrolment form: multipart POST (keeps the file upload) + success reveal ----
+// ---- Enrollment form: multipart POST (keeps the file upload) + success reveal ----
 // Kept separate from the lead-capture handler above, which URL-encodes the body
 // and would drop the uploaded ID file. Netlify accepts a multipart FormData POST.
 (function () {

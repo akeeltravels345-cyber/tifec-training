@@ -41,15 +41,15 @@
     </div>
   </header>
 
-  <!-- ENROLMENT FORM -->
-  <section class="section" id="enrol">
+  <!-- ENROLLMENT FORM -->
+  <section class="section" id="enroll">
     <div class="container" style="max-width:760px">
       <!-- If the link is invalid the form still submits, but the dashboard only
            attaches it when the token matches a paid student. -->
       <form class="form-card reveal" name="enrollment" method="POST" data-netlify="true"
-            netlify-honeypot="bot-field" enctype="multipart/form-data" data-success="enrol-success" id="enrol-form">
+            netlify-honeypot="bot-field" enctype="multipart/form-data" data-success="enroll-success" id="enroll-form">
         <input type="hidden" name="form-name" value="enrollment" />
-        <input type="hidden" name="s" id="enrol-token" value="" />
+        <input type="hidden" name="s" id="enroll-token" value="" />
         <p hidden><label>Don't fill this out: <input name="bot-field" /></label></p>
         <div class="form-grid">
           <div class="form-group">
@@ -82,8 +82,8 @@
             <select class="form-control" name="payment_method" required>
               <option value="" disabled selected>Select an option</option>
               <option>Pay in Full</option>
-              <option>Payment Plan (2 instalments)</option>
-              <option>Extended Plan (4 monthly instalments)</option>
+              <option>Payment Plan (2 installments)</option>
+              <option>Extended Plan (4 monthly installments)</option>
             </select>
             <p class="form-note">This confirms how you'll pay your programme fee. You can still change it later by letting us know.</p>
           </div>
@@ -98,7 +98,7 @@
         </div>
       </form>
 
-      <div class="form-success" id="enrol-success">
+      <div class="form-success" id="enroll-success">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
         <h3>Thank you, your enrollment is complete.</h3>
         <p>We've received your details. Your official acceptance letter will be on its way by email shortly. We look forward to seeing you in class.</p>
@@ -143,7 +143,7 @@
     // Carry the secure token from the link (?s=...) into the hidden form field.
     (function () {
       var t = new URLSearchParams(location.search).get('s') || '';
-      var el = document.getElementById('enrol-token');
+      var el = document.getElementById('enroll-token');
       if (el) el.value = t;
     })();
   </script>
